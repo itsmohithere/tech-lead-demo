@@ -11,5 +11,10 @@
     "noEmit": false,
     "types": ["jest", "node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "jest.config.ts"]
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/setupTests.ts",
+    "jest.config.ts"
+  ]
 }
