@@ -13,7 +13,7 @@ export default defineConfig({
   publicDir: false,
   build: {
     lib: {
-      entry: 'src/index.ts',
+      entry: 'src/library.ts',
       formats: ['es'],
       fileName: 'index',
       cssFileName: 'styles',
