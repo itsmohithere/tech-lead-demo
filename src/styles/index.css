@@ -235,4 +235,15 @@
   --color-border-disabled: var(--color-border-disabled);
 
   --color-focus-ring: var(--color-focus-ring);
+
+  --color-border-default: var(--color-border-default);
+  --color-border-focus: var(--color-border-focus);
+  --color-border-disabled: var(--color-border-disabled);
+
+  --color-border-danger: var(--color-border-danger);
+  --color-border-warning: var(--color-border-warning);
+  --color-border-success: var(--color-border-success);
+  --color-border-info: var(--color-border-info);
+
+  --color-focus-ring: var(--color-focus-ring);
 }
