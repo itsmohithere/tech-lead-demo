@@ -28,6 +28,7 @@
     "build:types": "tsc -p tsconfig.lib.json",
     "build:package": "npm run build:lib && npm run build:types",
     "lint": "eslint .",
+    "test:e2e": "cypress run",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

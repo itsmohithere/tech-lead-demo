@@ -14,13 +14,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  quality:
-    name: Quality Gates
+  static-analysis:
+    name: Static Analysis
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup Node
         uses: actions/setup-node@v7
@@ -40,11 +40,73 @@ jobs:
       - name: Format check
         run: npm run format:check
 
+  unit-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Jest tests and coverage
         run: npm run test:coverage
+
+  builds:
+    name: Builds
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Production build
         run: npm run build
 
       - name: Storybook build
         run: npm run build-storybook
+
+      - name: Library build
+        run: npm run build:package
+
+  e2e:
+    name: E2E
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cypress
+        uses: cypress-io/github-action@v7
+        with:
+          build: npm run build
+          start: npm run preview -- --host 0.0.0.0
+          wait-on: 'http://localhost:4173'
+          browser: chrome
