@@ -32,6 +32,7 @@ export function Button({
   type = 'button',
   ...props
 }: ButtonProps) {
+  const demo: string = 123;
   const classes = [
     baseStyles,
     variantStyles[variant],
