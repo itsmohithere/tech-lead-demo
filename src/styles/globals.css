@@ -1,0 +1,236 @@
+@import 'tailwindcss';
+
+:root {
+  /* ========================================
+     Primitive - Black & White
+     ======================================== */
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* ========================================
+     Primitive - Neutral
+     ======================================== */
+
+  --color-neutral-900: #1d1d1d;
+  --color-neutral-800: #424242;
+  --color-neutral-700: #838383;
+  --color-neutral-600: #c3c3c3;
+  --color-neutral-500: #dddddd;
+  --color-neutral-300: #ebebeb;
+  --color-neutral-100: #f4f4f4;
+  --color-neutral-50: #f9f9f9;
+
+  /* ========================================
+     Primitive - Primary
+     ======================================== */
+
+  --color-primary-700: #00a1ac;
+  --color-primary-600: #00bdc6;
+  --color-primary-500: #05c8cf;
+  --color-primary-400: #60d8dc;
+  --color-primary-300: #9ee8e9;
+  --color-primary-200: #d7f6f6;
+  --color-primary-100: #eafcfb;
+  --color-primary-50: #f7ffff;
+
+  /* ========================================
+     Primitive - Auxiliary
+     ======================================== */
+
+  --color-auxiliary-700: #ff5a30;
+  --color-auxiliary-600: #ff7750;
+  --color-auxiliary-500: #ff9b7e;
+  --color-auxiliary-400: #ffc1ae;
+  --color-auxiliary-300: #ffddd1;
+  --color-auxiliary-200: #fff0ec;
+  --color-auxiliary-100: #fff5f1;
+  --color-auxiliary-50: #fffcfc;
+
+  /* ========================================
+     Primitive - Danger
+     ======================================== */
+
+  --color-danger-700: #f52a2e;
+  --color-danger-600: #ff4445;
+  --color-danger-500: #f26566;
+  --color-danger-400: #fb8e8e;
+  --color-danger-300: #ffc5cc;
+  --color-danger-200: #ffe8eb;
+  --color-danger-100: #fff0f0;
+  --color-danger-50: #fffafa;
+
+  /* ========================================
+     Primitive - Warning
+     ======================================== */
+
+  --color-warning-700: #ff9222;
+  --color-warning-600: #ffa424;
+  --color-warning-500: #ffc034;
+  --color-warning-400: #ffd97b;
+  --color-warning-300: #ffe7ac;
+  --color-warning-200: #fff6de;
+  --color-warning-100: #fff8ec;
+  --color-warning-50: #fffdf9;
+
+  /* ========================================
+     Primitive - Success
+     ======================================== */
+
+  --color-success-700: #009358;
+  --color-success-600: #26af77;
+  --color-success-500: #52bd8d;
+  --color-success-400: #84ceac;
+  --color-success-300: #b4e1cb;
+  --color-success-200: #dff4e9;
+  --color-success-100: #eff9f5;
+  --color-success-50: #fafefc;
+
+  /* ========================================
+     Primitive - Info
+     ======================================== */
+
+  --color-info-700: #1e63db;
+  --color-info-600: #1675f1;
+  --color-info-500: #2795fc;
+  --color-info-400: #7ec0fd;
+  --color-info-300: #afd8fe;
+  --color-info-200: #def0fe;
+  --color-info-100: #eef7ff;
+  --color-info-50: #f6fcff;
+
+  /* ========================================
+     Semantic - Text
+     ======================================== */
+
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-disabled: var(--color-neutral-600);
+  --color-text-inverse: var(--color-white);
+
+  --color-text-danger: var(--color-danger-700);
+  --color-text-warning: var(--color-warning-700);
+  --color-text-success: var(--color-success-700);
+  --color-text-info: var(--color-info-700);
+
+  /* ========================================
+     Semantic - Background
+     ======================================== */
+
+  --color-background-primary: var(--color-white);
+  --color-background-secondary: var(--color-neutral-50);
+  --color-background-disabled: var(--color-neutral-100);
+
+  --color-background-danger: var(--color-danger-50);
+  --color-background-warning: var(--color-warning-50);
+  --color-background-success: var(--color-success-50);
+  --color-background-info: var(--color-info-50);
+
+  /* ========================================
+     Semantic - Border
+     ======================================== */
+
+  --color-border-default: var(--color-neutral-600);
+  --color-border-focus: var(--color-primary-700);
+  --color-border-disabled: var(--color-neutral-500);
+
+  --color-border-danger: var(--color-danger-700);
+  --color-border-warning: var(--color-warning-700);
+  --color-border-success: var(--color-success-700);
+  --color-border-info: var(--color-info-700);
+
+  /* ========================================
+     Semantic - Actions
+     ======================================== */
+
+  --color-action-primary: var(--color-primary-700);
+  --color-action-primary-hover: var(--color-primary-600);
+  --color-action-primary-active: var(--color-primary-500);
+
+  --color-action-secondary: var(--color-neutral-100);
+  --color-action-secondary-hover: var(--color-neutral-300);
+  --color-action-secondary-active: var(--color-neutral-500);
+
+  --color-action-disabled: var(--color-neutral-300);
+
+  /* ========================================
+     Semantic - Focus
+     ======================================== */
+
+  --color-focus-ring: var(--color-primary-700);
+}
+
+@theme {
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-50: var(--color-primary-50);
+
+  --color-neutral-900: var(--color-neutral-900);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-50: var(--color-neutral-50);
+
+  --color-danger-700: var(--color-danger-700);
+  --color-danger-600: var(--color-danger-600);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-400: var(--color-danger-400);
+  --color-danger-300: var(--color-danger-300);
+  --color-danger-200: var(--color-danger-200);
+  --color-danger-100: var(--color-danger-100);
+  --color-danger-50: var(--color-danger-50);
+
+  --color-warning-700: var(--color-warning-700);
+  --color-warning-600: var(--color-warning-600);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-400: var(--color-warning-400);
+  --color-warning-300: var(--color-warning-300);
+  --color-warning-200: var(--color-warning-200);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-50: var(--color-warning-50);
+
+  --color-success-700: var(--color-success-700);
+  --color-success-600: var(--color-success-600);
+  --color-success-500: var(--color-success-500);
+  --color-success-400: var(--color-success-400);
+  --color-success-300: var(--color-success-300);
+  --color-success-200: var(--color-success-200);
+  --color-success-100: var(--color-success-100);
+  --color-success-50: var(--color-success-50);
+
+  --color-info-700: var(--color-info-700);
+  --color-info-600: var(--color-info-600);
+  --color-info-500: var(--color-info-500);
+  --color-info-400: var(--color-info-400);
+  --color-info-300: var(--color-info-300);
+  --color-info-200: var(--color-info-200);
+  --color-info-100: var(--color-info-100);
+  --color-info-50: var(--color-info-50);
+
+  --color-action-primary: var(--color-action-primary);
+  --color-action-primary-hover: var(--color-action-primary-hover);
+  --color-action-primary-active: var(--color-action-primary-active);
+
+  --color-action-secondary: var(--color-action-secondary);
+  --color-action-secondary-hover: var(--color-action-secondary-hover);
+  --color-action-secondary-active: var(--color-action-secondary-active);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-text-inverse: var(--color-text-inverse);
+
+  --color-border-default: var(--color-border-default);
+  --color-border-focus: var(--color-border-focus);
+  --color-border-disabled: var(--color-border-disabled);
+
+  --color-focus-ring: var(--color-focus-ring);
+}
