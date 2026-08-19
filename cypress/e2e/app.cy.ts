@@ -4,7 +4,7 @@ describe('Tech Lead Demo application', () => {
 
     cy.contains('h1', 'Tech Lead Demo').should('be.visible');
 
-    cy.get('button').contains('Primary').should('be.visible');
+    cy.get('image').contains('Primary').should('be.visible');
 
     cy.get('button').contains('Secondary').should('be.visible');
 
