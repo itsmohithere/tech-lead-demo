@@ -1,7 +1,7 @@
 {
   "name": "tech-lead-demo",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Accessible React component library and design system foundation",
   "files": [
@@ -21,12 +21,24 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsmohithere/tech-lead-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsmohithere/tech-lead-demo.git"
+  },
+  "homepage": "https://github.com/itsmohithere/tech-lead-demo.git#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:lib": "vite build --config vite.lib.config.ts",
     "build:types": "tsc -p tsconfig.lib.json",
     "build:package": "npm run build:lib && npm run build:types",
+    "prepublishOnly": "npm run build:package",
     "lint": "eslint .",
     "test:e2e": "cypress run",
     "preview": "vite preview",
@@ -38,6 +50,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc -b --noEmit",
+    "semantic-release": "semantic-release",
     "ci": "npm run typecheck && npm run lint && npm run format:check && npm run test:coverage && npm run build"
   },
   "dependencies": {
@@ -76,6 +89,7 @@
     "prettier": "^3.9.6",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "semantic-release": "^25.0.9",
     "storybook": "^10.5.9",
     "ts-jest": "^29.4.12",
     "typescript": "~6.0.2",
