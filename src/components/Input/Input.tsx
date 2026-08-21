@@ -41,7 +41,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {label}
         </label>
       )}
-
+      <img src='/asdsadsadasd'/>
       <input
         ref={ref}
         id={inputId}
