@@ -23,9 +23,42 @@ describe('Button', () => {
   });
 
   it('supports different sizes', () => {
-    render(<Button size="lg">Save</Button>);
+    const { rerender } = render(<Button size="sm">Save</Button>);
 
-    expect(screen.getByRole('button')).toHaveClass('h-12');
+    expect(screen.getByRole('button')).toHaveClass('h-8', 'px-3', 'text-sm');
+
+    rerender(<Button size="md">Save</Button>);
+    expect(screen.getByRole('button')).toHaveClass('h-10', 'px-4');
+
+    rerender(<Button size="lg">Save</Button>);
+    expect(screen.getByRole('button')).toHaveClass('h-12', 'px-5');
+  });
+
+  it('shows a spinner and disables the button while loading', () => {
+    render(<Button loading>Save</Button>);
+
+    const button = screen.getByRole('button');
+
+    expect(button).toBeDisabled();
+    expect(button).not.toHaveTextContent('Save');
+    expect(button.querySelector('[aria-hidden="true"]')).toBeInTheDocument();
+  });
+
+  it('merges custom classes and forwards native button attributes', () => {
+    render(
+      <Button
+        aria-label="Save changes"
+        className="custom-class"
+        data-testid="save-button"
+      >
+        Save
+      </Button>,
+    );
+
+    const button = screen.getByTestId('save-button');
+
+    expect(button).toHaveClass('custom-class');
+    expect(button).toHaveAttribute('aria-label', 'Save changes');
   });
 
   it('handles user interaction', async () => {
